@@ -1,0 +1,71 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+
+# Logs
+logs/
+*.log
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.iml
+
+# System files
+.DS_Store
+Thumbs.db
+
+# PyInstaller
+*.spec
+*.exe
+*.dll
+*.so
+*.dylib
+pyinstaller/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Pipenv
+Pipfile
+Pipfile.lock
+
+# Poetry
+poetry.lock
+
+# pytest
+.cache/
+pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Type stubs
+.typestubs/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
