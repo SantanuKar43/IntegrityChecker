@@ -1,0 +1,26 @@
+name: Windows Build
+on: [push]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - name: Verify files in repo
+        run: ls -la
+
+      - name: Install dependencies
+        run: pip install pyinstaller
+
+      - name: Build EXE
+        run: |
+          pyinstaller integritychecker.spec
+
+      - name: Upload EXE
+        uses: actions/upload-artifact@v4
+        with:
+          name: Windows EXE
+          path: dist/integritychecker
