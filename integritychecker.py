@@ -96,17 +96,35 @@ def check_installed_apps_windows():
             os.environ.get('AppData', os.path.expanduser('~\\AppData\\Roaming'))
         ]
 
+        exclude_dirs = [
+            'Windows',
+            'System32',
+            'SysWOW64',
+            'node_modules',
+            'Python',
+            'Java',
+            'Android',
+            'Adobe',
+            'Microsoft',
+            'Git',
+            'PostgreSQL',
+            'MySQL'
+        ]
+
         for program_dir in program_files:
             if not os.path.exists(program_dir):
                 continue
 
             for root, dirs, files in os.walk(program_dir):
+                if any(exclude in root for exclude in exclude_dirs):
+                    continue
                 for item in dirs + files:
                     item_lower = item.lower()
                     for keyword in suspicious_keywords:
                         if keyword in item_lower:
                             full_path = os.path.join(root, item)
-                            suspicious_apps.append(full_path)
+                            if os.access(full_path, os.X_OK) or item.endswith('.exe') or item.endswith('.msi') or item.endswith('.bat') or item.endswith('.cmd') or item.endswith('.ps1'):
+                                suspicious_apps.append(full_path)
                             break
     except Exception as e:
         print(f"{Fore.YELLOW}Warning: Could not check installed applications: {e}{Style.RESET_ALL}")
@@ -121,7 +139,7 @@ def is_suspicious_process(name, cmdline):
 
 
     # Skip our own process and common system processes
-    if any(keyword in name for keyword in ['interview-detector', 'python', 'pyinstaller']):
+    if any(keyword in name for keyword in ['integritychecker', 'python', 'pyinstaller']):
         return False
 
 
