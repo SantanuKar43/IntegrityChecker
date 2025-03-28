@@ -10,7 +10,7 @@ jobs:
           fetch-depth: 1
 
       - name: Verify files in repo
-        run: dir /s
+        run: dir
 
       - name: Install dependencies
         run: pip install pyinstaller
