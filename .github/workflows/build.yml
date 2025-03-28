@@ -17,10 +17,10 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyinstaller --name integritychecker-windows integritychecker.spec
+          pyinstaller integritychecker.spec
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
           name: Windows EXE
-          path: dist/integritychecker-windows.exe
+          path: dist/integritychecker.exe
