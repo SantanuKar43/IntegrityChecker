@@ -31,7 +31,6 @@ logs/
 Thumbs.db
 
 # PyInstaller
-*.spec
 *.exe
 *.dll
 *.so
