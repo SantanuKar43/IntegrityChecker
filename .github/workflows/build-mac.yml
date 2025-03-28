@@ -13,7 +13,9 @@ jobs:
         run: ls -la
 
       - name: Install dependencies
-        run: pip install pyinstaller
+        run: |
+          pip install -r requirements.txt
+          pip install pyinstaller
 
       - name: Build EXE
         run: |
