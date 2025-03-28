@@ -22,11 +22,11 @@ A command-line tool that detects potentially hidden interview coding processes a
 
 
 1. Download the appropriate binary for your system:
-- For macOS: `integritychecker-macos`
-- For Windows: `integritychecker.exe`
+- For macOS: `integritychecker-mac`
+- For Windows: `integritychecker-windows.exe`
 2. Make the binary executable (macOS/Linux only):
   ```bash
-  chmod +x integritychecker-macos
+  chmod +x integritychecker-mac
   ```
 
 
@@ -48,13 +48,13 @@ A command-line tool that detects potentially hidden interview coding processes a
 
 On macOS/Linux:
 ```bash
-./integritychecker-macos
+./integritychecker-mac
 ```
 
 
 On Windows:
 ```bash
-integritychecker.exe
+integritychecker-windows.exe
 ```
 
 
