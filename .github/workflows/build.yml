@@ -17,9 +17,6 @@ jobs:
 
       - name: Build EXE
         run: |
-          echo "Current directory: %CD%"
-          cd ${{ github.workspace }}
-          echo "Current directory: %CD%"
           pyinstaller integritychecker.spec
 
       - name: Upload EXE
